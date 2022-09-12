@@ -58,8 +58,37 @@ body{
    display: none;
 }
 
-#glasses{
-    transition: all 0.5s;
-    
+
+.title{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.649);
+    width: 100%;
+    height: 200px;
+    padding: 20px;
 }
 
+.title h1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.title span{
+   color: white;
+   font-weight: 500;
+    padding: 5px 10px;
+    background-color: rgb(246, 136, 154);
+    
+}
+.title p{
+    margin-top: 20px;
+    font-weight: 500;
+    color: aliceblue;
+}
+
+.item button {
+    border: none;
+}

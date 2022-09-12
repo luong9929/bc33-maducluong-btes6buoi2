@@ -97,50 +97,6 @@ let dataGlasses = [
   },
 ];
 
-//lấy ra những sản phẩm
-
-// let glass = dataGlasses.filter((pri) => pri.price === 100);
-// console.log(glass);
-// let glass2 = dataGlasses.find((pri) => pri.id === "G1");
-// console.log(glass2);
-
-// let index = dataGlasses.findIndex((hi) => hi.id === "G6");
-// console.log(index);
-// console.log(dataGlasses[index]);
-
-// dataGlasses.forEach((sanpham, index) => {
-//   console.log(sanpham);
-// });
-
-// let mang = dataGlasses.map((sp, i) => {});
-// console.log(mang);
-
-// let tongtien = dataGlasses.reduce((tt, sanpham, i) => {
-//   return (tt += sanpham.price);
-// }, 0);
-
-// console.log(tongtien);
-
-// let render = dataGlasses.reduce((html, sp, i) => {
-   
-//   return (html += `
-//     <div class="col-4 ">
-//          <div class="item w-100 p-3 " >
-//             <button style=" width:130px ; height:130px ; background-color:#fff " id="${sp.id}" )>
-//                 <img src="${sp.src}" alt="" class="w-100">
-//             </button>
-        
-//         </div>
-//    </div>
-//     `
-     
-//     );
-// }, "");
-// console.log(render)
-// document.querySelector("#vglassesList").innerHTML = render;
-
-
-
 
 let renderGlass = (arr) => {
   let html = ''
@@ -150,7 +106,7 @@ let renderGlass = (arr) => {
     html += `
     <div class="col-4 ">
            <div class="item w-100 p-3 " >
-                <button style=" width:130px ; height:130px ; background-color:#fff " id="show ${item.id}" )>
+                <button style=" width:130px ; height:130px ; background-color:#fff " id="shows " onclick="show('${item.id}')" )>
                    <img src="${item.src}" alt="" class="w-100">
                </button>
             
@@ -169,6 +125,28 @@ let renderGlass = (arr) => {
 renderGlass(dataGlasses)
 
 
-document.querySelector('#show').onclick = () =>{
+
+
+
+
+  window.show = (i) =>{    
+    let glass2 = dataGlasses.find(cc => cc.id === i);
+    let html = ''
+    html =`
+    <div class="content">
+    <div class="thumnail">
+        <img src="${glass2.virtualImg}" alt="">
+    </div>
+    <div class="title">
+       <h1>
+          ${glass2.name} - ${glass2.brand} (${glass2.color})
+       </h1>
+        <span>${glass2.price}$</span>
+        
+        <p>${glass2.description}</p>
+    </div>
+  </div>
+  `
+  document.querySelector('#avatar').innerHTML = html
+  }
   
-}
